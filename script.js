@@ -46,21 +46,55 @@ for (let i = 0; i < time.length; i++) {
 
 var appt;
 
-var saveBtn = $(".saveBtn");
+var saveNine = $(".saveNine");
+var saveTen = $(".saveTen");
+var saveEleven = $(".saveEleven");
+var saveTwelve = $(".saveTwelve");
+var saveThirteen = $(".saveThirteen");
+var saveFourteen = $(".saveFourteen");
+var saveFifteen = $(".saveFifteen");
+var saveSixteen = $(".saveSixteen");
+var saveSeventeen = $(".saveSeventeen");
+var saveBtns = [saveNine, saveTen, saveEleven, saveTwelve, saveThirteen, saveFourteen, saveFifteen, saveSixteen, saveSeventeen];
 
-var nineAM = $(".nineAM");
+
+var nineText = $(".nineText");
+var tenText = $(".tenText");
+var elevenText = $(".elevenText");
+var twelveText = $(".twelveText");
+var thirteenText = $(".thirteenText");
+var fourteenText = $(".fourteenText");
+var fifteenText = $(".fifteenText");
+var sixteenText = $(".sixteenText");
+var seventeenText = $(".seventeenText");
+
+var textAreas = [nineText, tenText, elevenText, twelveText, thirteenText, fourteenText, fifteenText, sixteenText, seventeenText];
 
 
-saveBtn.on("click",function(){
-    localStorage.setItem("task", JSON.stringify(nineAM.val()));
-    console.log(JSON.stringify(nineAM.val()));
-});
 
-var input = JSON.parse(localStorage.getItem("task"));
-
-console.log(nineAM.text(input));
-
-function saved() {
-    nineAM.text(input)
+function getItems() {
+for (let i = 0; i < textAreas.length; i++) {
+    var input = JSON.parse(localStorage.getItem("task " + [i]));
+    console.log(input);
+    textAreas[i].text(input);
+}
 }
 
+getItems();
+
+
+for (let i = 0; i < saveBtns.length; i++) {
+    saveBtns[i].on("click", function () {
+        localStorage.setItem("task " + [i], JSON.stringify(textAreas[i].val()));
+    })
+}
+
+$("#clear").on("click", function() {
+    var question = confirm("Are you sure you want to clear the schedule?")
+    if (question === true) {
+        localStorage.clear();
+        getItems();
+    } else {
+        return
+    }
+})
