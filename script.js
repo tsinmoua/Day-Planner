@@ -1,14 +1,11 @@
-var headerEl = $(".display-3");
-var pEl = $(".lead");
 var date = $("#currentDay");
-var timeBlock = $(".time-block");
 
 // Add current date to currentDay id
 date.text(moment().format('LL'));
 
 var currentTime = moment().format('HH');
 
-console.log("the current hour is: " + currentTime);
+// console.log("the current hour is: " + currentTime);
 
 var nine = $("#nine");
 var ten = $("#ten");
@@ -20,15 +17,7 @@ var fifteen = $("#fifteen");
 var sixteen = $("#sixteen");
 var seventeen = $("#seventeen");
 
-console.log(nine.attr("value"));
-console.log(ten.attr("value"));
-console.log(eleven.attr("value"));
-console.log(twelve.attr("value"));
-console.log(thirteen.attr("value"));
-console.log(fourteen.attr("value"));
-console.log(fifteen.attr("value"));
-console.log(sixteen.attr("value"));
-console.log(seventeen.attr("value"));
+// console.log(nine.attr("value"));
 
 // 24 hour clock with the work day hours
 var time = [nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen];
@@ -44,8 +33,6 @@ for (let i = 0; i < time.length; i++) {
     }
 }
 
-var appt;
-
 var saveNine = $(".saveNine");
 var saveTen = $(".saveTen");
 var saveEleven = $(".saveEleven");
@@ -57,7 +44,6 @@ var saveSixteen = $(".saveSixteen");
 var saveSeventeen = $(".saveSeventeen");
 var saveBtns = [saveNine, saveTen, saveEleven, saveTwelve, saveThirteen, saveFourteen, saveFifteen, saveSixteen, saveSeventeen];
 
-
 var nineText = $(".nineText");
 var tenText = $(".tenText");
 var elevenText = $(".elevenText");
@@ -67,11 +53,9 @@ var fourteenText = $(".fourteenText");
 var fifteenText = $(".fifteenText");
 var sixteenText = $(".sixteenText");
 var seventeenText = $(".seventeenText");
-
 var textAreas = [nineText, tenText, elevenText, twelveText, thirteenText, fourteenText, fifteenText, sixteenText, seventeenText];
 
-
-
+// Input items from local storage to correct timeslot to see items when refresh page
 function getItems() {
 for (let i = 0; i < textAreas.length; i++) {
     var input = JSON.parse(localStorage.getItem("task " + [i]));
@@ -82,13 +66,14 @@ for (let i = 0; i < textAreas.length; i++) {
 
 getItems();
 
-
+// Each save button will only save its timeslot items
 for (let i = 0; i < saveBtns.length; i++) {
     saveBtns[i].on("click", function () {
         localStorage.setItem("task " + [i], JSON.stringify(textAreas[i].val()));
     })
 }
 
+// Clear local storage
 $("#clear").on("click", function() {
     var question = confirm("Are you sure you want to clear the schedule?")
     if (question === true) {

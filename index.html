@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-  
+
   <link rel="stylesheet" href="style.css" />
   <title>Work Day Scheduler</title>
 </head>
@@ -20,66 +20,75 @@
     <p class="lead">A simple calendar app for scheduling your work day</p>
     <p id="currentDay" class="lead"></p>
   </header>
-  <div class="container">
 
-    <!-- Timeblocks go here -->
-    <div id="nine" class="row hour time-block past" value="9">9AM
+  <div class="container time-block">
+
+    <div id="nine" class="time-block row" value="9">
+      <div class="hour">9AM</div>
       <textarea class="description nineText"></textarea>
       <button class="saveBtn saveNine">
         <i class="fas fa-save"></i>
       </button>
     </div>
-    
-    <div id="ten" class="row hour time-block" value="10">10AM
+
+    <div id="ten" class="row time-block" value="10">
+      <div class="hour">10AM</div>
       <textarea class="description tenText"></textarea>
       <button class="saveBtn saveTen">
         <i class="fas fa-save"></i>
       </button>
     </div>
 
-    <div id="eleven" class="row hour time-block" value="11">11AM
+    <div id="eleven" class="row time-block " value="11">
+      <div class="hour">11AM</div>
       <textarea class="description elevenText"></textarea>
       <button class="saveBtn saveEleven">
         <i class="fas fa-save"></i>
       </button>
     </div>
 
-    <div id="twelve" class="row hour time-block" value="12">12PM
+    <div id="twelve" class="row time-block " value="12">
+      <div class="hour">12PM</div>
       <textarea class="description twelveText"></textarea>
       <button class="saveBtn saveTwelve">
         <i class="fas fa-save"></i>
       </button>
     </div>
 
-    <div id="thirteen" class="row hour time-block" value="13">1PM
+    <div id="thirteen" class="row time-block " value="13">
+      <div class="hour">1PM</div>
       <textarea class="description thirteenText"></textarea>
-      <button class="saveBtn saveThirteen">
+      <button class="saveBtn saveTirteen">
         <i class="fas fa-save"></i>
       </button>
     </div>
 
-    <div id="fourteen" class="row hour time-block" value="14">2PM
+    <div id="fourteen" class="row time-block " value="14">
+      <div class="hour">2PM</div>
       <textarea class="description fourteenText"></textarea>
       <button class="saveBtn saveFourteen">
         <i class="fas fa-save"></i>
       </button>
     </div>
 
-    <div id="fifteen" class="row hour time-block" value="15">3PM
+    <div id="fifteen" class="row time-block " value="15">
+      <div class="hour">3PM</div>
       <textarea class="description fifteenText"></textarea>
       <button class="saveBtn saveFifteen">
         <i class="fas fa-save"></i>
       </button>
     </div>
 
-    <div id="sixteen" class="row hour time-block" value="16">4PM
+    <div id="sixteen" class="row time-block " value="16">
+      <div class="hour">4PM</div>
       <textarea class="description sixteenText"></textarea>
       <button class="saveBtn saveSixteen">
         <i class="fas fa-save"></i>
       </button>
     </div>
 
-    <div id="seventeen" class="row hour time-block" value="17">5PM
+    <div id="seventeen" class="row time-block " value="17">
+      <div class="hour">5PM</div>
       <textarea class="description seventeenText"></textarea>
       <button class="saveBtn saveSeventeen">
         <i class="fas fa-save"></i>
@@ -88,7 +97,7 @@
 
     <div>
       <br>
-    <button id="clear">Clear Schedule</button>
+      <button id="clear">Clear Schedule</button>
     </div>
 
   </div>
